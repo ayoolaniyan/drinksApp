@@ -1,0 +1,11 @@
+{
+  "defaultProject": "pocApp",
+  "projects": {
+    "pocApp": {
+      "name": "pocApp",
+      "integrations": {},
+      "type": "angular",
+      "root": "projects/pocApp"
+    }
+  }
+}

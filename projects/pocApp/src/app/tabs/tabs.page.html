@@ -1,0 +1,27 @@
+<ion-tabs>
+
+  <ion-tab-bar color="primary" slot="bottom">
+
+    <ion-tab-button tab="drinks">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Drinks</ion-label>
+    </ion-tab-button>
+
+    <!-- Placeholder for fab button -->
+    <ion-tab-button class="ion-tab-button-placeholder">
+    </ion-tab-button>
+
+    <ion-tab-button tab="about">
+      <ion-icon name="color-palette-outline"></ion-icon>
+      <ion-label>About</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+  <ion-fab class="ion-fab-custom" vertical="bottom" horizontal="center" slot="fixed" (click)="selectAction()">
+    <ion-fab-button color="dark">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-tabs>

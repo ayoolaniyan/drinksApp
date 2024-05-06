@@ -1,0 +1,73 @@
+<ion-header collapse="fade" [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title color="light">
+      Drinks
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid *ngIf="isLoading">
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-spinner color="primary"></ion-spinner>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="!isLoading && loadedDrinks.length > 0">
+    <div class="ion-padding">
+      <ion-row>
+        <ion-col class="ion-text-center" size="12" size-sm>
+          <h2>
+            <ion-text color="light">{{loadedDrinks[1].strDrink}}</ion-text>
+          </h2>
+          <ion-card color="primary">
+            <img [src]="loadedDrinks[1].strDrinkThumb" alt="" />
+            <ion-card-header>
+              <ion-button fill="outline" color="light"
+                [routerLink]="['/', 'products', 'drinks', loadedDrinks[1].idDrink]">
+                Detail
+              </ion-button>
+            </ion-card-header>
+          </ion-card>
+          <div>
+            <ng-container *ngIf="loadedDrinks">
+              <ion-list class="list-custom animate__animated animate__fadeIn" lines="full"
+                *ngFor="let drink of loadedDrinks">
+                <ion-item color="primary" button [routerLink]="['/', 'products', 'drinks', drink.idDrink]"
+                  detail="false">
+                  <ion-thumbnail slot="start">
+                    <ion-img [src]="drink.strDrinkThumb"></ion-img>
+                  </ion-thumbnail>
+
+                  <ion-label>
+                    <h3>{{drink.strDrink}}</h3>
+                  </ion-label>
+                  <ion-badge color="dark" slot="end">Detail</ion-badge>
+                </ion-item>
+              </ion-list>
+            </ng-container>
+          </div>
+          <!-- <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350">
+            <ion-list class="list-custom animate__animated animate__fadeIn" lines="full">
+              <ion-item *cdkVirtualFor="let drink of loadedDrinks">
+                <ion-thumbnail slot="start">
+                  <ion-img [src]="drink.strDrinkThumb"></ion-img>
+                </ion-thumbnail>
+                <ion-label>
+                  <h2>{{ drink.strDrink }}</h2>
+                </ion-label>
+                <ion-label>
+                  <p><ion-button fill="clear" color="primary" [routerLink]="['/', 'products', 'drinks', drink.idDrink]">
+                      More
+                    </ion-button></p>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </cdk-virtual-scroll-viewport> -->
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>

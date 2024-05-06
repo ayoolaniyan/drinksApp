@@ -1,0 +1,33 @@
+<ion-header collapse="fade" [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title color="light">
+      Drink Details
+    </ion-title>
+
+    <ion-buttons slot="start">
+      <ion-button color="secondary" routerLink="/products/drinks">
+        <ion-icon slot="icon-only" name="arrow-back-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <div class="ion-text-center" *ngIf="isLoading && drinks">
+      <ion-spinner color="primary"></ion-spinner>
+    </div>
+
+    <ion-card color="primary" *ngFor="let drink of drinks[0]">
+      <ion-card-header>
+        <ion-card-title>{{drink.strDrink}}</ion-card-title>
+      </ion-card-header>
+      <img [src]="drink.strDrinkThumb" alt="" />
+      <ion-card-content>
+        <p>Intructions: {{drink.strInstructions}}</p>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

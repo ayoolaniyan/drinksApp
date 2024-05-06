@@ -1,0 +1,5 @@
+{
+  "title": "DrinksApp",
+  "drinksUrl": "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic",
+  "drinkUrl": "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
+}

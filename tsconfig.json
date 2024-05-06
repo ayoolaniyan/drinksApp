@@ -3,7 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "outDir": "./docs/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
@@ -19,7 +19,7 @@
     "paths": {
       "@angular/*": ["./node_modules/@angular/*"],
       "pocLib": [
-        "dist/poc-lib"
+        "docs/poc-lib"
       ]
     },
     "target": "ES2022",

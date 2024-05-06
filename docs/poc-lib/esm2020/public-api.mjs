@@ -1,0 +1,8 @@
+/*
+ * Public API Surface of poc-lib
+ */
+export * from './lib/poc-lib.service';
+export * from './lib/poc-lib.component';
+export * from './lib/poc-lib.module';
+export * from './lib/poc-material.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL3BvYy1saWIvc3JjL3B1YmxpYy1hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0dBRUc7QUFFSCxjQUFjLHVCQUF1QixDQUFDO0FBQ3RDLGNBQWMseUJBQXlCLENBQUM7QUFDeEMsY0FBYyxzQkFBc0IsQ0FBQztBQUNyQyxjQUFjLDJCQUEyQixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFB1YmxpYyBBUEkgU3VyZmFjZSBvZiBwb2MtbGliXG4gKi9cblxuZXhwb3J0ICogZnJvbSAnLi9saWIvcG9jLWxpYi5zZXJ2aWNlJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL3BvYy1saWIuY29tcG9uZW50JztcbmV4cG9ydCAqIGZyb20gJy4vbGliL3BvYy1saWIubW9kdWxlJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL3BvYy1tYXRlcmlhbC5tb2R1bGUnO1xuIl19

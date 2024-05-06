@@ -13,6 +13,8 @@ ___ The application will automatically reload if you change any of the source fi
 ___ Angular shared library
 ___ Ionic + Angular
 
+```mermaid
 graph TD;
-    Library-->First Feature Module;
-    Library-->Second Feature Module;
+    Library-->FirstFeatureModule;
+    Library-->SecondFeatureModule;
+```

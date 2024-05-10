@@ -1,28 +1,26 @@
 <ion-header collapse="fade" [translucent]="true">
-  <ion-toolbar color="light">
-    <ion-title color="dark">
+  <ion-toolbar color="primary">
+    <ion-title color="light">
       About
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div class="ion-padding">
-    <h2>
-      <ion-text color="light">DrinksApp</ion-text>
-    </h2>
+<ion-content [fullscreen]="true" *ngIf="drinks">
+  <div class="ion-padding" *ngFor="let items of drinks; let i = index">
+    <div class="ion-text-center" *ngIf="isLoading && drinks">
+      <ion-spinner color="primary"></ion-spinner>
+    </div>
 
-    <ion-card color="primary">
-      <img alt="Silhouette of mountains" src="../../../../assets/card-media.png" />
+    <ion-card color="primary" *ngFor="let drink of items">
       <ion-card-header>
-        <ion-card-title>Card Title</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        <ion-card-title>{{drink.strDrink}}</ion-card-title>
       </ion-card-header>
-
+      <img [src]="drink.strDrinkThumb" alt="" />
       <ion-card-content>
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
       </ion-card-content>
     </ion-card>
-
   </div>
 </ion-content>

@@ -1,54 +1,44 @@
-
-import { Component, OnInit } from '@angular/core';
-import { Drinks } from '../../models/drinks.model';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DrinkData } from "../../models/drinkData.model";
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 import { DrinksService } from '../../../../services/drinks.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-drink-detail',
   templateUrl: './drink-detail.page.html',
   styleUrls: ['./drink-detail.page.scss'],
 })
-export class DrinkDetailPage implements OnInit {
+export class DrinkDetailPage implements OnInit, OnDestroy {
   drinks: DrinkData[][] = [];
   isLoading = false;
   data: any;
   id!: string | null;
+  private drinksSub: Subscription = new Subscription;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
-    private navCtrl: NavController,
     private drinkService: DrinksService) { }
 
   ngOnInit() {
-    // this.drinkService.getDrink('14029').subscribe((data) => {
-
-    //   this.drinks = data;
-    //   console.log('the drink: ', this.drinks);
-    // });
-    this.route.paramMap.subscribe((paramMap) => {
+    this.drinksSub = this.route.paramMap.subscribe((paramMap) => {
       this.id = paramMap.get('idDrink');
       this.drinkService.getDrink(this.id!).subscribe((data) => {
         this.drinks = data;
-        console.log('the drink: ', this.drinks);
-        console.log('drinks subscription: ', data);
       });
-      console.log('PARAMmap ', this.id);
-      console.log('PARAM ', paramMap);
     });
   }
 
   ionViewWillEnter() {
     this.isLoading = true;
-    this.drinkService.getDrink('14029').subscribe((data) => {
-      // this.drinks = data;
-
-      console.log('the drink: ', data);
+    this.drinkService.getDrink('14029').subscribe(() => {
       this.isLoading = false;
     });
   }
 
+  ngOnDestroy(): void {
+    if (this.drinksSub) {
+      this.drinksSub.unsubscribe();
+    }
+  }
 }

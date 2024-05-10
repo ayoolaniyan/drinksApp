@@ -1,9 +1,7 @@
-export class Drinks {
-  constructor(
-    public idDrink: string,
-    public strDrink: string,
-    public strDrinkThumb: string
-  ) { }
+export interface Drinks {
+  idDrink: string;
+  strDrink: string;
+  strDrinkThumb: string;
 }
 
 
